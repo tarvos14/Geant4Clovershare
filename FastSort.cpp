@@ -298,7 +298,7 @@ while(p<24)
 			{
 				
 				//This part for copying over particle info. Do we only copy particle info if there's a gamma ray coincidence? No, that comes later
-		//Use random numbers when filling histograms.
+
 
 
 
