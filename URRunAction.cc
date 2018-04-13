@@ -34,7 +34,11 @@ void RunActionUR::BeginOfRunAction(const G4Run* aRun)
 
   srand(time(0));
    ////This file will need to be changed to account for different directories.
+<<<<<<< HEAD
    newfile = new TFile("/afs/crc.nd.edu/group/nsl/activetarget/users/shender4/Codes/STARLITER-1/Build/output8mmNewUniform250umOffsetSmalAngledLise.root","recreate");
+=======
+   newfile = new TFile("/afs/crc.nd.edu/group/nsl/activetarget/users/shender4/Codes/STARLITER-1/Build/output44.root","recreate");
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
   t = new TTree("t","output from geant");
     
    ////Again, removed because there was no DeltaE detector

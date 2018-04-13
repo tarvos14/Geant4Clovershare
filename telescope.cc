@@ -113,7 +113,11 @@ int main(int argc, char** argv)
 #endif
     }
 	////High Beam rate here, can be changed around depending on needs.
+<<<<<<< HEAD
   runManager->BeamOn(1.0E8);
+=======
+  runManager->BeamOn(1.0E7);
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
 
 
   // job termination
@@ -124,8 +128,11 @@ int main(int argc, char** argv)
   delete runManager;
   G4cout << "### runManager closed!" << G4endl;
 
+<<<<<<< HEAD
  
 
+=======
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
   return 0;
 }
 	//UImanager->ApplyCommand("/run/numberOfThreads num") next to other UImanager;

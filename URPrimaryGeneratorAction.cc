@@ -86,9 +86,15 @@ gRandom->SetSeed(0);
 //Setting parameters for G4ParticleDefinition below
 G4int atomicNum=4;
 G4int massNum=7;
+<<<<<<< HEAD
 G4int part_ene = 31.8*MeV; //particle energy in MeV
 //.429 MeV for 7Be, .479 MeV for 7Li
 G4double ExcEnergy=.429*MeV;
+=======
+G4int part_ene = 30.45*MeV; //particle energy in MeV
+//.429 MeV for 7Be, .479 MeV for 7Li
+G4double ExcEnergy=.479*MeV;
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
 
 
 	//Creating our 7Be/7Li particles
@@ -103,6 +109,7 @@ G4double ExcEnergy=.429*MeV;
  G4double yAve=0;
 
 	// zero the momentum unit vector
+<<<<<<< HEAD
 	//According to LISE, there can be as much as .86 degrees from the straight line before hitting the gold foil in both x and y
 	//px and py should now be weighted by an angle that can vary from -.85 to .85 and pz should be reduced by a corresponding factor.
 	costheta=1-.0001*G4UniformRand();
@@ -122,6 +129,12 @@ G4double ExcEnergy=.429*MeV;
 	pz=1.0
 */
 
+=======
+    px = 0.0;
+    py = 0.0;
+    pz = 1.0;
+	
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
    	//// Sets the original postion of the particle. Usually at origin, unless your beam is actually awful.
 	//.23 mm for X and Y seems to reproduce the conditions of the Li peak decently well.
 	//we had a 9.6 mm radius iris which constrains the beam size
@@ -141,6 +154,7 @@ G4double ExcEnergy=.429*MeV;
 	//32 Starts with a width of 2.00 mm and goes to 3.00 mm at 42 
 	//43_0-9 are 1/10 of a 0 center 3 mm wide 7Be beam.
 	//44 is a uniform beam of 4 mm,
+<<<<<<< HEAD
 
 	//Sign assign
 /*
@@ -168,6 +182,14 @@ G4double ExcEnergy=.429*MeV;
 	//G4double yDisplacement = sqrt(RadiusDisplacement*RadiusDisplacement-xDisplacement*xDisplacement)*SignAssign;
 
 	int Reroll=0;
+=======
+	G4double beamPosX = 0.0*mm;
+	G4double beamPosY = 0.0*mm;
+	G4double xUncert = 5.00*mm;
+	G4double yUncert = 5.00*mm;
+
+	
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
 	
 
 
@@ -177,6 +199,7 @@ G4double ExcEnergy=.429*MeV;
 
 
 	//Here is a spread out but uniform beam.
+<<<<<<< HEAD
 	x=beamPosX+xUncert*(0.5-G4UniformRand());
 	y=beamPosY+yUncert*(0.5-G4UniformRand());
 
@@ -186,6 +209,10 @@ G4double ExcEnergy=.429*MeV;
 		y=beamPosY+yUncert*(0.5-G4UniformRand());
 		Reroll++;
 	}
+=======
+	x=beamPosX+ xUncert*(0.5-G4UniformRand());
+	y=beamPosY+ yUncert*(0.5-G4UniformRand());
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
 
 
 	
@@ -198,10 +225,15 @@ G4double ExcEnergy=.429*MeV;
 	//y = G4RandGauss::shoot(beamPosY,yUncert); //(beamPosY + 2*yUncert*G4UniformRand()-yUncert);
 
 	//This appears to be creating fairly random values, but Geant might be reacting strangely to them. Still investigating.
+<<<<<<< HEAD
 	//For Gaussian, probs need to randomly assign a radius, then determine where it is in x-y plane, cut off if it's past 9 mm or so.
 	//G4double r=gRandom->Gaus(beamPosR,rUncert)*mm;
 	//x= r*std::cos(phi);
 	//y= r*std::sin(phi);
+=======
+	//x= gRandom->Gaus(beamPosX,xUncert)*mm;
+	//y=gRandom->Gaus(beamPosY,yUncert)*mm;
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
 
 	//Setting the beam behind the target.
         z = -10.0*mm;
@@ -226,7 +258,11 @@ G4double ExcEnergy=.429*MeV;
   // Sets particle energy
   //Currently runs at beam energy with a few 100 keV spread. Still seems to be losing some energy somewhere in set-up though. Change 
 	//Energy spread. Almost zero for Li, at least 500 keV for the Be.
+<<<<<<< HEAD
     G4double part_unc=1*MeV;
+=======
+    G4double part_unc=0.5*MeV;
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
     G4double part_energy = gRandom->Gaus(part_ene,part_unc);
 
      particleGun->SetParticleEnergy(part_energy);
@@ -249,3 +285,7 @@ G4double ExcEnergy=.429*MeV;
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a6e5f61f736c05a277be50dcbaed6a4a7d27b04f
