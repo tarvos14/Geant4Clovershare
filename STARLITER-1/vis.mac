@@ -1,0 +1,31 @@
+# Sets some default verbose
+/run/verbose 0
+/tracking/verbose 0
+/event/verbose 0
+
+
+# create empty scene
+/vis/scene/create
+
+/vis/open OGL
+
+/control/verbose 2
+
+# Draw coordinate axes:
+/vis/scene/add/axes 0 0 0 10 cm
+
+# Specify target point (so a viewpoint rotation keeps it in view)
+/vis/viewer/set/targetPoint 0 0 0 mm
+
+# draw scene
+/vis/viewer/zoom 1.0
+/vis/viewer/set/viewpointThetaPhi 130 30 deg
+/vis/viewer/flush
+
+/tracking/storeTrajectory 1
+/vis/scene/add/trajectories
+
+# (if you prefer refreshing each event, comment out next line)
+/vis/scene/endOfEventAction accumulate
+
+exit
